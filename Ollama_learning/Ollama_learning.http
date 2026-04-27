@@ -1,0 +1,6 @@
+@Ollama_learning_HostAddress = http://localhost:5291
+
+GET {{Ollama_learning_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
