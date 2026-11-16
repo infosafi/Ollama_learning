@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ollama_learning")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+030474a55d0f34c4c9dccc3a227c0aa4958ab0ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ollama_learning")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ollama_learning")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

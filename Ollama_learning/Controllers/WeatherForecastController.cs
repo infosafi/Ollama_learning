@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using OllamaSharp;
+using OllamaSharp.Models;
 
 namespace Ollama_learning.Controllers
 {
@@ -7,58 +8,58 @@ namespace Ollama_learning.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        //private readonly OllamaApiClient _ollama;
-
-       
-
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
+        private readonly OllamaApiClient _ollama;
         private readonly ILogger<WeatherForecastController> _logger;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
-        }
-
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            _ollama = new OllamaApiClient(new Uri("http://localhost:11434"), "llama3");
         }
 
         [HttpPost("summarize")]
         public async Task<IActionResult> Summarize([FromBody] string text)
         {
-           // private readonly OllamaApiClient _ollama;
-             OllamaApiClient _ollama = new OllamaApiClient(new Uri("http://localhost:11434/"), "llama3");
-            var prompt = $"Summarize this ERP data in 3 bullet points:\n\n{text}";
-            var response =  _ollama.GenerateAsync(prompt);
-            var finalResponse = "";
-
-            await foreach (var message in response)
-            {
-                finalResponse += message.Response;
-            }
-
-            return Ok(finalResponse);
+            var prompt = $"Summarize this ERP data in 3 clear bullet points:\n\n{text}";
+            var result = await GenerateTextAsync(prompt);
+            return Ok(result);
         }
 
         [HttpPost("explain-report")]
         public async Task<IActionResult> ExplainReport([FromBody] string report)
         {
-            OllamaApiClient _ollama = new OllamaApiClient(new Uri("http://localhost:11434/"), "llama3");
-            var prompt = $"Explain this financial report in simple terms:\n\n{report}";
-            var response =  _ollama.GenerateAsync(prompt);
-            return Ok(response);
+            var prompt = $"Explain this financial report in simple language:\n\n{report}";
+            var result = await GenerateTextAsync(prompt);
+            return Ok(result);
+        }
+
+        [HttpPost("chat")]
+        public async Task<IActionResult> Chat([FromBody] string message)
+        {
+            var result = await GenerateTextAsync(message);
+            return Ok(result);
+        }
+
+        private async Task<string> GenerateTextAsync(string prompt)
+        {
+            var request = new GenerateRequest
+            {
+                Model = _ollama.SelectedModel,
+                Prompt = prompt,
+                Stream = false
+            };
+
+            var response = "";
+
+            await foreach (var item in _ollama.GenerateAsync(request))
+            {
+                if (!string.IsNullOrEmpty(item?.Response))
+                {
+                    response += item.Response;
+                }
+            }
+
+            return response;
         }
     }
 }

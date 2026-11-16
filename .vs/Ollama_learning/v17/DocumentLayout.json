@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Learning\\AI\\Ollama\\Ollama_learning\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{384B1A6B-EBBC-45C5-9832-3AF878880A15}|Ollama_learning\\Ollama_learning.csproj|d:\\learning\\ai\\ollama\\ollama_learning\\ollama_learning\\controllers\\ollamacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{384B1A6B-EBBC-45C5-9832-3AF878880A15}|Ollama_learning\\Ollama_learning.csproj|solutionrelative:ollama_learning\\controllers\\ollamacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{384B1A6B-EBBC-45C5-9832-3AF878880A15}|Ollama_learning\\Ollama_learning.csproj|d:\\learning\\ai\\ollama\\ollama_learning\\ollama_learning\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{384B1A6B-EBBC-45C5-9832-3AF878880A15}|Ollama_learning\\Ollama_learning.csproj|solutionrelative:ollama_learning\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,11 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "OllamaController.cs",
+              "DocumentMoniker": "D:\\Learning\\AI\\Ollama\\Ollama_learning\\Ollama_learning\\Controllers\\OllamaController.cs",
+              "RelativeDocumentMoniker": "Ollama_learning\\Controllers\\OllamaController.cs",
+              "ToolTip": "D:\\Learning\\AI\\Ollama\\Ollama_learning\\Ollama_learning\\Controllers\\OllamaController.cs",
+              "RelativeToolTip": "Ollama_learning\\Controllers\\OllamaController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAmwEwAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-14T13:19:08.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Learning\\AI\\Ollama\\Ollama_learning\\Ollama_learning\\Program.cs",
               "RelativeDocumentMoniker": "Ollama_learning\\Program.cs",
@@ -35,13 +52,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "D:\\Learning\\AI\\Ollama\\Ollama_learning\\Ollama_learning\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Ollama_learning\\Controllers\\WeatherForecastController.cs",
               "ToolTip": "D:\\Learning\\AI\\Ollama\\Ollama_learning\\Ollama_learning\\Controllers\\WeatherForecastController.cs",
               "RelativeToolTip": "Ollama_learning\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAYwDQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBAAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-27T16:33:44.54Z",
               "EditorCaption": ""
